@@ -1,0 +1,83 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Materials</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Eweight</th>
+      <th>Ppg</th>
+      <th>Colorant</th>
+      <th>K2o</th>
+      <th>Na2o</th>
+      <th>Li2o</th>
+      <th>Cao</th>
+      <th>Mgo</th>
+      <th>Bao</th>
+      <th>Sro</th>
+      <th>Zno</th>
+      <th>Pbo</th>
+      <th>Feo</th>
+      <th>Cuo</th>
+      <th>Coo</th>
+      <th>Nio</th>
+      <th>Al2o3</th>
+      <th>B2o3</th>
+      <th>Fe2o3</th>
+      <th>P2o5</th>
+      <th>Sb2o3</th>
+      <th>Cr2o3</th>
+      <th>V2o5</th>
+      <th>Sio2</th>
+      <th>Tio2</th>
+      <th>Zro2</th>
+      <th>Sno2</th>
+      <th>Mno2</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @materials.each do |material| %>
+      <tr>
+        <td><%= material.name %></td>
+        <td><%= material.eweight %></td>
+        <td><%= material.ppg %></td>
+        <td><%= material.colorant %></td>
+        <td><%= material.k2o %></td>
+        <td><%= material.na2o %></td>
+        <td><%= material.li2o %></td>
+        <td><%= material.cao %></td>
+        <td><%= material.mgo %></td>
+        <td><%= material.bao %></td>
+        <td><%= material.sro %></td>
+        <td><%= material.zno %></td>
+        <td><%= material.pbo %></td>
+        <td><%= material.feo %></td>
+        <td><%= material.cuo %></td>
+        <td><%= material.coo %></td>
+        <td><%= material.nio %></td>
+        <td><%= material.al2o3 %></td>
+        <td><%= material.b2o3 %></td>
+        <td><%= material.fe2o3 %></td>
+        <td><%= material.p2o5 %></td>
+        <td><%= material.sb2o3 %></td>
+        <td><%= material.cr2o3 %></td>
+        <td><%= material.v2o5 %></td>
+        <td><%= material.sio2 %></td>
+        <td><%= material.tio2 %></td>
+        <td><%= material.zro2 %></td>
+        <td><%= material.sno2 %></td>
+        <td><%= material.mno2 %></td>
+        <td><%= link_to 'Show', material %></td>
+        <td><%= link_to 'Edit', edit_material_path(material) %></td>
+        <td><%= link_to 'Destroy', material, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Material', new_material_path %>

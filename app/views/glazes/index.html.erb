@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Glazes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Cone</th>
+      <th>Datetested</th>
+      <th>Opacity</th>
+      <th>Surface</th>
+      <th>Atmosphere</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @glazes.each do |glaze| %>
+      <tr>
+        <td><%= glaze.name %></td>
+        <td><%= glaze.description %></td>
+        <td><%= glaze.cone %></td>
+        <td><%= glaze.datetested %></td>
+		<td><%= glaze.opacity.name %></td>
+        <td><%= glaze.surface.name %></td>
+        <td><%= glaze.atmosphere.name %></td>
+        <td><%= link_to 'Show', glaze %></td>
+        <td><%= link_to 'Edit', edit_glaze_path(glaze) %></td>
+        <td><%= link_to 'Destroy', glaze, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Glaze', new_glaze_path %>

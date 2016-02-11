@@ -1,0 +1,73 @@
+<%= form_for(@clay) do |f| %>
+  <% if @clay.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@clay.errors.count, "error") %> prohibited this clay from being saved:</h2>
+
+      <ul>
+      <% @clay.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :cone %><br>
+    <%= f.text_field :cone %>
+  </div>
+  <div class="field">
+    <%= f.label :datetested %><br>
+    <%= f.date_select :datetested %>
+  </div>
+  <div class="field">
+    <%= f.label :casting %><br>
+    <%= f.check_box :casting %>
+  </div>
+  <div class="field">
+    <%= f.label :specificgravity %><br>
+    <%= f.text_field :specificgravity %>
+  </div>
+  <div class="field">
+    <%= f.label :dryshrink, "Dry Shrink" %><br>
+    <%= f.text_field :dryshrink %>
+  </div>
+  <div class="field">
+    <%= f.label :bisque, "Bisque Shrink" %><br>
+    <%= f.text_field :bisque %>
+  </div>
+  <div class="field">
+    <%= f.label :glazeshrink, "Glaze Shrink" %><br>
+    <%= f.text_field :glazeshrink %>
+  </div>
+  <div class="field">
+    <%= f.label :woa, "Water of Absorption" %><br>
+    <%= f.text_field :woa %>
+  </div>
+  <div class="field">
+    <%= f.label :atmosphere_id %><br>
+    <%= f.collection_select :atmosphere_id, Atmosphere.all, :id, :name %>
+  </div>
+  
+  <%= f.fields_for :ingredients do |builder| %>
+  	<p class="fields">
+  		<%= builder.label :material_id, "Material" %> 
+  		<%= builder.collection_select(:material_id, Material.all, :id, :name) %>
+  		<%= builder.text_field :amt %>
+  		<!--Delete: <%= builder.check_box :_destroy %>-->
+  	</p> 
+  <% end %>
+  
+  <p><%= link_to_add_ingredients "Add Ingredient", f, :ingredients %></p>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

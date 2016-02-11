@@ -1,0 +1,133 @@
+<%= form_for(@material) do |f| %>
+  <% if @material.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@material.errors.count, "error") %> prohibited this material from being saved:</h2>
+
+      <ul>
+      <% @material.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :eweight %><br>
+    <%= f.text_field :eweight %>
+  </div>
+  <div class="field">
+    <%= f.label :ppg %><br>
+    <%= f.text_field :ppg %>
+  </div>
+  <div class="field">
+    <%= f.label :colorant %><br>
+    <%= f.check_box :colorant %>
+  </div>
+  <div class="field">
+    <%= f.label :k2o %><br>
+    <%= f.text_field :k2o %>
+  </div>
+  <div class="field">
+    <%= f.label :na2o %><br>
+    <%= f.text_field :na2o %>
+  </div>
+  <div class="field">
+    <%= f.label :li2o %><br>
+    <%= f.text_field :li2o %>
+  </div>
+  <div class="field">
+    <%= f.label :cao %><br>
+    <%= f.text_field :cao %>
+  </div>
+  <div class="field">
+    <%= f.label :mgo %><br>
+    <%= f.text_field :mgo %>
+  </div>
+  <div class="field">
+    <%= f.label :bao %><br>
+    <%= f.text_field :bao %>
+  </div>
+  <div class="field">
+    <%= f.label :sro %><br>
+    <%= f.text_field :sro %>
+  </div>
+  <div class="field">
+    <%= f.label :zno %><br>
+    <%= f.text_field :zno %>
+  </div>
+  <div class="field">
+    <%= f.label :pbo %><br>
+    <%= f.text_field :pbo %>
+  </div>
+  <div class="field">
+    <%= f.label :feo %><br>
+    <%= f.text_field :feo %>
+  </div>
+  <div class="field">
+    <%= f.label :cuo %><br>
+    <%= f.text_field :cuo %>
+  </div>
+  <div class="field">
+    <%= f.label :coo %><br>
+    <%= f.text_field :coo %>
+  </div>
+  <div class="field">
+    <%= f.label :nio %><br>
+    <%= f.text_field :nio %>
+  </div>
+  <div class="field">
+    <%= f.label :al2o3 %><br>
+    <%= f.text_field :al2o3 %>
+  </div>
+  <div class="field">
+    <%= f.label :b2o3 %><br>
+    <%= f.text_field :b2o3 %>
+  </div>
+  <div class="field">
+    <%= f.label :fe2o3 %><br>
+    <%= f.text_field :fe2o3 %>
+  </div>
+  <div class="field">
+    <%= f.label :p2o5 %><br>
+    <%= f.text_field :p2o5 %>
+  </div>
+  <div class="field">
+    <%= f.label :sb2o3 %><br>
+    <%= f.text_field :sb2o3 %>
+  </div>
+  <div class="field">
+    <%= f.label :cr2o3 %><br>
+    <%= f.text_field :cr2o3 %>
+  </div>
+  <div class="field">
+    <%= f.label :v2o5 %><br>
+    <%= f.text_field :v2o5 %>
+  </div>
+  <div class="field">
+    <%= f.label :sio2 %><br>
+    <%= f.text_field :sio2 %>
+  </div>
+  <div class="field">
+    <%= f.label :tio2 %><br>
+    <%= f.text_field :tio2 %>
+  </div>
+  <div class="field">
+    <%= f.label :zro2 %><br>
+    <%= f.text_field :zro2 %>
+  </div>
+  <div class="field">
+    <%= f.label :sno2 %><br>
+    <%= f.text_field :sno2 %>
+  </div>
+  <div class="field">
+    <%= f.label :mno2 %><br>
+    <%= f.text_field :mno2 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

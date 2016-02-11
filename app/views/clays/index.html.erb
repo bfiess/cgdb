@@ -1,0 +1,97 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Clays</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Cone</th>
+      <th>Datetested</th>
+      <th>Casting</th>
+      <th>Specificgravity</th>
+      <th>Dryshrink</th>
+      <th>Bisque</th>
+      <th>Glazeshrink</th>
+      <th>Woa</th>
+      <th>Atmosphere</th>
+      <th>K2o</th>
+      <th>Na2o</th>
+      <th>Li2o</th>
+      <th>Cao</th>
+      <th>Mgo</th>
+      <th>Bao</th>
+      <th>Sro</th>
+      <th>Zno</th>
+      <th>Pbo</th>
+      <th>Feo</th>
+      <th>Cuo</th>
+      <th>Coo</th>
+      <th>Nio</th>
+      <th>Al2o3</th>
+      <th>B2o3</th>
+      <th>Fe2o3</th>
+      <th>P2o5</th>
+      <th>Sb2o3</th>
+      <th>Cr2o3</th>
+      <th>V2o5</th>
+      <th>Sio2</th>
+      <th>Tio2</th>
+      <th>Zro2</th>
+      <th>Sno2</th>
+      <th>Mno2</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clays.each do |clay| %>
+      <tr>
+        <td><%= clay.name %></td>
+        <td><%= clay.description %></td>
+        <td><%= clay.cone %></td>
+        <td><%= clay.datetested %></td>
+        <td><%= clay.casting %></td>
+        <td><%= clay.specificgravity %></td>
+        <td><%= clay.dryshrink %></td>
+        <td><%= clay.bisque %></td>
+        <td><%= clay.glazeshrink %></td>
+        <td><%= clay.woa %></td>
+        <td><%= clay.atmosphere_id %></td>
+        <td><%= clay.k2o %></td>
+        <td><%= clay.na2o %></td>
+        <td><%= clay.li2o %></td>
+        <td><%= clay.cao %></td>
+        <td><%= clay.mgo %></td>
+        <td><%= clay.bao %></td>
+        <td><%= clay.sro %></td>
+        <td><%= clay.zno %></td>
+        <td><%= clay.pbo %></td>
+        <td><%= clay.feo %></td>
+        <td><%= clay.cuo %></td>
+        <td><%= clay.coo %></td>
+        <td><%= clay.nio %></td>
+        <td><%= clay.al2o3 %></td>
+        <td><%= clay.b2o3 %></td>
+        <td><%= clay.fe2o3 %></td>
+        <td><%= clay.p2o5 %></td>
+        <td><%= clay.sb2o3 %></td>
+        <td><%= clay.cr2o3 %></td>
+        <td><%= clay.v2o5 %></td>
+        <td><%= clay.sio2 %></td>
+        <td><%= clay.tio2 %></td>
+        <td><%= clay.zro2 %></td>
+        <td><%= clay.sno2 %></td>
+        <td><%= clay.mno2 %></td>
+        <td><%= link_to 'Show', clay %></td>
+        <td><%= link_to 'Edit', edit_clay_path(clay) %></td>
+        <td><%= link_to 'Destroy', clay, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Clay', new_clay_path %>

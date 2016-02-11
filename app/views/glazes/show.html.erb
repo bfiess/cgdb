@@ -1,0 +1,100 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @glaze.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @glaze.description %>
+</p>
+
+<p>
+  <strong>Cone:</strong>
+  <%= @glaze.cone %>
+</p>
+
+<p>
+  <strong>Datetested:</strong>
+  <%= @glaze.datetested %>
+</p>
+
+<p>
+  <strong>Opacity:</strong>
+  <%= @glaze.opacity.name %>
+</p>
+
+<p>
+  <strong>Surface:</strong>
+  <%= @glaze.surface.name %>
+</p>
+
+<p>
+  <strong>Atmosphere:</strong>
+  <%= @glaze.atmosphere.name %>
+</p>
+
+<p>
+  <strong>Specific Gravity:</strong>
+  <%= @glaze.specificgravity %>
+</p>
+<p>
+  <strong>Clay:</strong>
+  <% if @glaze.clay == nil %>
+  	Unspecified
+  <% else %>
+  <%= link_to @glaze.clay.name, @glaze.clay %>
+  <% end %>
+</p>
+
+<% totalamt = 0.0 %>
+					
+<%- for ingredient in @batchingredients -%>
+	<%- totalamt += ingredient.amt -%>
+<%- end -%>
+
+
+
+<h2>BATCH</h2>
+
+<% for ingredient in @batchingredients %>
+	<li><%=h (ingredient.amt/totalamt*100).round(1) %> <%=h ingredient.material.name %></li>
+<% end %>
+</ br>
+
+<% if @colorantingredients.empty? %>
+<% else %>
+	<hr>
+	<% for ingredient in @colorantingredients %>
+		<li><%=h (ingredient.amt/totalamt*100).round(1) %> <%=h ingredient.material.name %></li>
+	<% end %>
+<% end %>
+
+
+
+<p>
+
+<% for ingredient in @glaze.ingredients %>
+	<% if ingredient.material.colorant == false %>
+		<% totalamt += ingredient.amt %>
+	<% end %>
+<% end %>
+
+<% @ro.each do |index| %>
+	<b><%= index.last %></b>: <%= index.first %></br>
+<% end %>
+<p>
+<% @r2o3.each do |index| %>
+	<b><%= index.last %></b>: <%= index.first %></br>
+<% end %>
+<p>
+<% @ro2.each do |index| %>
+	<b><%= index.last %></b>: <%= index.first %></br>
+<% end %>
+<p>
+<b>Alumina to Silica Ratio</b>: <%= (@glaze.sio2/@glaze.al2o3).round(3) %>
+							
+<p>
+<%= link_to 'Edit', edit_glaze_path(@glaze) %> |
+<%= link_to 'Back', glazes_path %>

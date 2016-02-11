@@ -1,0 +1,63 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  eweight: 9.99
+  ppg: 9.99
+  colorant: false
+  k2o: 9.99
+  na2o: 9.99
+  li2o: 9.99
+  cao: 9.99
+  mgo: 9.99
+  bao: 9.99
+  sro: 9.99
+  zno: 9.99
+  pbo: 9.99
+  feo: 9.99
+  cuo: 9.99
+  coo: 9.99
+  nio: 9.99
+  al2o3: 9.99
+  b2o3: 9.99
+  fe2o3: 9.99
+  p2o5: 9.99
+  sb2o3: 9.99
+  cr2o3: 9.99
+  v2o5: 9.99
+  sio2: 9.99
+  tio2: 9.99
+  zro2: 9.99
+  sno2: 9.99
+  mno2: 9.99
+
+two:
+  name: MyString
+  eweight: 9.99
+  ppg: 9.99
+  colorant: false
+  k2o: 9.99
+  na2o: 9.99
+  li2o: 9.99
+  cao: 9.99
+  mgo: 9.99
+  bao: 9.99
+  sro: 9.99
+  zno: 9.99
+  pbo: 9.99
+  feo: 9.99
+  cuo: 9.99
+  coo: 9.99
+  nio: 9.99
+  al2o3: 9.99
+  b2o3: 9.99
+  fe2o3: 9.99
+  p2o5: 9.99
+  sb2o3: 9.99
+  cr2o3: 9.99
+  v2o5: 9.99
+  sio2: 9.99
+  tio2: 9.99
+  zro2: 9.99
+  sno2: 9.99
+  mno2: 9.99

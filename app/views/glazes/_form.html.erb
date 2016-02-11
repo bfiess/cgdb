@@ -1,0 +1,64 @@
+<%= form_for(@glaze) do |f| %>
+  <% if @glaze.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@glaze.errors.count, "error") %> prohibited this glaze from being saved:</h2>
+
+      <ul>
+      <% @glaze.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :cone %><br>
+    <%= f.text_field :cone %>
+  </div>
+  <div class="field">
+    <%= f.label :datetested %><br>
+    <%= f.date_select :datetested %>
+  </div>
+  <div class="field">
+    <%= f.label :opacity_id %><br>
+    <%= f.collection_select :opacity_id, Opacity.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :surface_id %><br>
+    <%= f.collection_select :surface_id, Surface.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :atmosphere_id %><br>
+    <%= f.collection_select :atmosphere_id, Atmosphere.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :clay_id %><br>
+    <%= f.collection_select :clay_id, Clay.all, :id, :name, include_blank: 'Unspecified' %>
+  </div>
+  <div class="field">
+    <%= f.label :specificgravity %><br>
+    <%= f.text_field :specificgravity %>
+  </div>
+  
+  <%= f.fields_for :ingredients do |builder| %>
+  	<p class="fields">
+  		<%= builder.label :material_id, "Material" %> 
+  		<%= builder.collection_select(:material_id, Material.all, :id, :name) %>
+  		<%= builder.text_field :amt %>
+  		<!--Delete: <%= builder.check_box :_destroy %>-->
+  	</p> 
+  <% end %>
+  <p><%= link_to_add_ingredients "Add Ingredient", f, :ingredients %></p>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

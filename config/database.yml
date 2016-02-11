@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: app13_development
+  pool: 5
+  username: benfiess
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: app13_test
+  pool: 5
+  username: benfiess
+  password:

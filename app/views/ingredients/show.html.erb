@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Glaze:</strong>
+  <%= @ingredient.glaze_id %>
+</p>
+
+<p>
+  <strong>Material:</strong>
+  <%= @ingredient.material_id %>
+</p>
+
+<p>
+  <strong>Amt:</strong>
+  <%= @ingredient.amt %>
+</p>
+
+<%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
+<%= link_to 'Back', ingredients_path %>

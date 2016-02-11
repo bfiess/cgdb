@@ -1,0 +1,7 @@
+<p><div class="newingred">
+  <!--<%= f.select :glaze, %w[text_field check_box shirt_sizes] %>-->
+  <%= f.label :material_id, "Material" %> 
+  		<%= f.collection_select(:material_id, Material.all, :id, :name) %>
+  		<%= f.text_field :amt %>
+  <%= link_to "remove", '#', class: "remove_fields" %>
+</div></p>
