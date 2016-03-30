@@ -1,6 +1,8 @@
 class MaterialsController < ApplicationController
   before_action :set_material, only: [:show, :edit, :update, :destroy]
 
+before_filter :authorize_admin, :except => :index
+
   # GET /materials
   # GET /materials.json
   def index

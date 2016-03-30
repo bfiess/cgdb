@@ -65,6 +65,7 @@ class GlazesController < ApplicationController
   # POST /glazes.json
   def create
     @glaze = Glaze.new(glaze_params)
+    @glaze.user_id = current_user.id
 
     respond_to do |format|
       if @glaze.save
@@ -109,6 +110,6 @@ class GlazesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def glaze_params
-      params.require(:glaze).permit(:name, :description, :cone, :datetested, :opacity_id, :surface_id, :atmosphere_id, :specificgravity, :clay_id, :k2o, :na2o, :li2o, :cao, :mgo, :bao, :sro, :zno, :pbo, :feo, :cuo, :coo, :nio, :al2o3, :b2o3, :fe2o3, :p2o5, :sb2o3, :cr2o3, :v2o5, :sio2, :tio2, :zro2, :sno2, :mno2, ingredients_attributes: [:id, :amt, :material_id, :_destroy])
+      params.require(:glaze).permit(:name, :description, :cone, :datetested, :opacity_id, :surface_id, :atmosphere_id, :specificgravity, :clay_id, :k2o, :na2o, :li2o, :cao, :mgo, :bao, :sro, :zno, :pbo, :feo, :cuo, :coo, :nio, :al2o3, :b2o3, :fe2o3, :p2o5, :sb2o3, :cr2o3, :v2o5, :sio2, :tio2, :zro2, :sno2, :mno2, :user_id, ingredients_attributes: [:id, :amt, :material_id, :_destroy])
     end
 end
